@@ -1,8 +1,8 @@
-FROM smebberson/alpine-nginx-nodejs
+FROM node:7.1.0-alpine
 
-# Stream the nginx logs to stdout and stderr
-RUN ln -sf /dev/stdout /var/log/nginx/access.log && ln -sf /dev/stderr /var/log/nginx/error.log
+WORKDIR /app
+COPY . .
+RUN npm install --production
 
-ADD root /
-ADD app /app
-RUN cd /app && npm install --production
+# if we don't use this specific form, SIGINT/SIGTERM doesn't get forwarded
+CMD node index.js
