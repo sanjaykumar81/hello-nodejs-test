@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/skylinerhq/hello-expressjs#readme",
   "dependencies": {
-    "express": "^4.14.0",
-    "morgan": "^1.7.0"
+    "express": "^4.14.1",
+    "morgan": "^1.8.1"
   }
 }
